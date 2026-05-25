@@ -8,7 +8,7 @@ pipeline {
             println "my i value is ${i}"
           }
           list_of_subjects = ["devops","azure","aws"]
-          for ele in list_of_subjects {
+          for (ele in list_of_subjects) {
             println "subject name is ${ele}"
           }
           j=10
