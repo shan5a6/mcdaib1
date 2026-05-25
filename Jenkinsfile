@@ -17,7 +17,7 @@ pipeline {
           println "my variable value is ${var1}"
 
           // consuming predefined variables
-          println "my current execution folder is ${WOKRSPACE}"
+          println "my current execution folder is ${WORKSPACE}"
 
           // consuming parameter variables
           println "my selected environment is ${params.ENV}"
