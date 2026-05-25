@@ -1,23 +1,18 @@
 pipeline {
+  /*agent server1/docker/kubernetes/any*/
   agent any 
   stages {
-    stage('working with loops') {
+    stage('git checkout') {
       steps {
         script {
-          for(i=1;i<=5;i++){
-            println "my i value is ${i}"
-          }
-          list_of_subjects = ["devops","azure","aws"]
-          for (ele in list_of_subjects) {
-            println "subject name is ${ele}"
-          }
-          j=10
-          while (j<=20){
-            println "value of j is ${j}"
-            j = j + 1
+          File file = new File("/opt/mydata.txt")
+          def lines = file.readLines()
+          println "Lines\n ${lines}"
+          for (line in lines) {
+            println "myline is ${line}"
           }
         }
       }
     }
-  }
+  } 
 }
