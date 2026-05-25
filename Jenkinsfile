@@ -1,28 +1,15 @@
 pipeline {
-  agent any
-  parameters {
-  choice choices: ['dev', 'prod'], description: 'select the environment', name: 'ENV'
-  } 
-  environment {
-  JAVA_VERSION = "1.8.10"
-  }
-
+  agent any 
   stages {
-    stage('working with variables') {
-      steps {
-        script {
-          // declaring userdefined variables
-          var1=100
-          //accessing  values of a variables 
-          println "my variable value is ${var1}"
-
-          // consuming predefined variables
-          println "my current execution folder is ${WORKSPACE}"
-
-          // consuming parameter variables
-          println "my selected environment is ${params.ENV}"
-          // consuming environment variables
-          println "my selected java version is  is ${env.JAVA_VERSION}"          
+    stage('working with conditions') {
+      script {
+        a=10
+        b=15
+        if (a>b) {
+          println "a:${a} is big"
+        }
+        else {
+          println "b:${b} is big"
         }
       }
     }
